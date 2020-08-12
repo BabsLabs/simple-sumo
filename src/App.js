@@ -33,7 +33,7 @@ class App extends Component {
   }
 
   loginStatus = () => {
-    axios.get('https://localhost:3001/logged_in', { withCredentials: true })
+    axios.get('http://localhost:3001/logged_in', { withCredentials: true })
 
     .then(response => {
       if (response.data.logged_in) {
