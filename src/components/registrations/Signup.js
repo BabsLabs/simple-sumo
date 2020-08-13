@@ -14,7 +14,7 @@ class Signup extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     return this.props.loggedInStatus ? this.redirect() : null
   }
 
