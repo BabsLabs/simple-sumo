@@ -5,7 +5,7 @@ import axios from 'axios'
 const Home = (props) => {
 
   const handleClick = () => {
-    axios.delete('http://localhost:3001/logout', {withCredentials: true})
+    axios.delete('https://babslabs-simple-sumo-backend.herokuapp.com/logout', {withCredentials: true})
 
     .then(response => {
       props.handleLogout()

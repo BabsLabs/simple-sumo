@@ -33,7 +33,7 @@ class Login extends Component {
       password: password
     }
 
-    axios.post('http://localhost:3001/login', {user}, {withCredentials: true})
+    axios.post('https://babslabs-simple-sumo-backend.herokuapp.com/login', {user}, {withCredentials: true})
 
     .then(response => {
       if (response.data.logged_in) {
