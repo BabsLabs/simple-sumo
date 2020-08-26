@@ -37,7 +37,7 @@ class Signup extends Component {
       password_confirmation: password_confirmation
     }
 
-    axios.post('http://localhost:3001/users', {user}, {withCredentials: true})
+    axios.post('https://babslabs-simple-sumo-backend.herokuapp.com/users', {user}, {withCredentials: true})
 
     .then(response => {
       if (response.status === 201) {
