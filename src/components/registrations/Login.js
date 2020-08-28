@@ -33,7 +33,7 @@ class Login extends Component {
       password: password
     }
 
-    axios.post('https://babslabs-simple-sumo-backend.herokuapp.com/login', {user}, {withCredentials: true})
+    axios.post('http://babslabs-simple-sumo-backend.herokuapp.com/login', {user}, {withCredentials: true})
 
     .then(response => {
       if (response.data.logged_in) {
@@ -64,13 +64,33 @@ class Login extends Component {
     )
   }
 
+  handleVerification = () => {
+    let verificationStatus = this.props.location.search;
+
+    if (verificationStatus === "?verified=successful") {
+      return (
+          <p>Thank you for verifing your account. Please Log In to continue.</p>
+        )
+      } else if (verificationStatus === "?verified=already_verified") {
+        return (
+          <p>This account has already been verified. Please Log In to continue.</p>
+      )
+    }
+  }
+
   render() {
     const {username, password} = this.state
 
+    
+    
     return (
       <div>
-        <h1>Log In</h1>
 
+        <div>
+          {this.handleVerification()}
+        </div>
+
+        <h1>Log In</h1>
         <form onSubmit={this.handleSubmit}>
           <input 
             type="text" 
